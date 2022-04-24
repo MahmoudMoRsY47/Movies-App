@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.example.moviesapp.ui.home.ui.MainViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.home.ui.MainActivity">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showWhenError="@{view.popularMovies}" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showWhenLoading="@{view.popularMovies}"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/populer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Popular"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginStart="4dp"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:fuck="@{view.popularMovies.toData().result}"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="4dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/populer"
+                app:showWhenSuccess="@{view.popularMovies}"
+                app:spanCount="2"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/one_movie" />
+
+            <TextView
+                android:id="@+id/populer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Up Coming"
+                android:layout_marginStart="4dp"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                app:layout_constraintTop_toBottomOf="@+id/rcv"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:fuck="@{view.up.toData().result}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/populer1"
+                app:showWhenSuccess="@{view.up}"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="4dp"
+                app:spanCount="2"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="16dp"
+                tools:listitem="@layout/one_movie" />
+            <TextView
+                android:id="@+id/populer2"
+                android:layout_width="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/rcv1"
+                android:text="Top Rate"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:fuck="@{view.topMovies.toData().result}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/populer2"
+                app:showWhenSuccess="@{view.topMovies}"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="4dp"
+                app:spanCount="2"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="0dp"
+                tools:listitem="@layout/one_movie" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
