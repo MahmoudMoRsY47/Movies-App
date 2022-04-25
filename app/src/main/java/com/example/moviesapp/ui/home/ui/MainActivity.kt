@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity(),MoviesDetailsInter {
 
     override fun onClickItem(movies: Result) {
         val Myintent =Intent(this,DetailsOfMovie::class.java)
+        Myintent.putExtra("id",movies)
         startActivity(Myintent)
     }
 

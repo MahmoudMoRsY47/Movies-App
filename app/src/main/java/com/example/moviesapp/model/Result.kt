@@ -2,6 +2,7 @@ package com.example.moviesapp.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Result(
     @SerializedName("adult")
@@ -48,7 +49,10 @@ data class Result(
     @SerializedName("vote_average")
     val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Int?
+    val voteCount: Int?,
+
+    @field:SerializedName("origin_country")
+     val originCountry: String? = null
 
 
-)
+): Serializable
