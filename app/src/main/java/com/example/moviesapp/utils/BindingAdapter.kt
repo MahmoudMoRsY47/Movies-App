@@ -6,7 +6,9 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.moviesapp.model.Result
+import com.example.moviesapp.model.ResultX
 import com.example.moviesapp.model.State
+import com.example.moviesapp.ui.actors.adapter.PersonAdapter
 import com.example.moviesapp.ui.home.adapter.MovieAdapter
 
 @BindingAdapter(value = ["app:showWhenLoading"])
@@ -43,5 +45,14 @@ fun setRecycleItems(view :RecyclerView, items : List<Result>?){
         (view.adapter as MovieAdapter).setItem(items)
     }else{
         (view.adapter as MovieAdapter).setItem(emptyList())
+    }
+}
+
+@BindingAdapter(value = ["app:fucke"])
+fun setRecycleItemse(view :RecyclerView, items : List<ResultX>?){
+    if(items != null){
+        (view.adapter as PersonAdapter).setIteme(items)
+    }else{
+        (view.adapter as PersonAdapter).setIteme(emptyList())
     }
 }

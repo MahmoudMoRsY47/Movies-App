@@ -1,4 +1,4 @@
-package com.example.moviesapp.ui.home.repository
+package com.example.moviesapp.ui.actors.repository
 
 import com.example.moviesapp.model.State
 import com.example.moviesapp.networking.API
@@ -7,11 +7,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 
-class MoviesRepository {
+class PersonRepository {
 
-     fun getPopular()= wrapWithFlow{ API.apiServi.getPopularMovies(Constant.api_key)}
-    fun getTop()= wrapWithFlow{ API.apiServi.getTopRated(Constant.api_key)}
-    fun getUp()= wrapWithFlow{ API.apiServi.getUpComing(Constant.api_key)}
+
+    fun getPoster()= wrapWithFlow{ API.apiServiPhoto.getPopular(Constant.api_key)}
+
 
 
 

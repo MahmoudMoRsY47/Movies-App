@@ -20,7 +20,7 @@
             android:exported="false"
             tools:ignore="DuplicateActivity" />
         <activity
-            android:name=".ui.home.ui.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity
