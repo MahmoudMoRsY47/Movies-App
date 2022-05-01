@@ -1,17 +1,14 @@
 package com.example.moviesapp.ui.home.ui
 
-import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.moviesapp.R
-import com.example.moviesapp.databinding.ActivityMainBinding
 import com.example.moviesapp.databinding.HomeFragmentBinding
 import com.example.moviesapp.model.Result
 import com.example.moviesapp.ui.home.adapter.MovieAdapter
@@ -19,7 +16,7 @@ import com.example.moviesapp.ui.home.adapter.MoviesDetailsInter
 import com.example.moviesapp.ui.movie_details.DetailsOfMovie
 
 class HomeFragment :Fragment() , MoviesDetailsInter {
-    private val viewModel : MainViewModel by viewModels()
+    private val viewModel : HomeViewModel by viewModels()
     lateinit var binding : HomeFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view"
-            type="com.example.moviesapp.ui.home.ui.MainViewModel" />
+            type="com.example.moviesapp.ui.home.ui.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

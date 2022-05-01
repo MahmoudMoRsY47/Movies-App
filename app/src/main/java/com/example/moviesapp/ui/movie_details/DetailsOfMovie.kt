@@ -8,12 +8,11 @@ import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivityDetailsOfMovieBinding
 import com.example.moviesapp.model.Result
-import com.example.moviesapp.ui.home.ui.MainViewModel
-import com.hamdy.showtime.ui.model.MoviesDetailsResponse
+import com.example.moviesapp.ui.home.ui.HomeViewModel
 
 class DetailsOfMovie : AppCompatActivity() {
     lateinit var binding : ActivityDetailsOfMovieBinding
-    private val viewModel : MainViewModel by viewModels()
+    private val viewModel : HomeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this , R.layout.activity_details_of_movie)

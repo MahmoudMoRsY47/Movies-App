@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.moviesapp.ui.home.repository.MoviesRepository
 
-class MainViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     private val repository = MoviesRepository()
     val popularMovies =repository.getPopular().asLiveData()
     val topMovies =repository.getTop().asLiveData()

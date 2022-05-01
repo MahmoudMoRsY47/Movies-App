@@ -9,10 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActorsFragmentBinding
-import com.example.moviesapp.databinding.ProfileFragmentBinding
 import com.example.moviesapp.ui.actors.adapter.PersonAdapter
-import com.example.moviesapp.ui.home.adapter.MovieAdapter
-import com.example.moviesapp.ui.home.ui.MainViewModel
 
 class ActorsFragment: Fragment() {
     private val viewModel : PersonViewModel by viewModels()
