@@ -11,6 +11,7 @@ import com.example.moviesapp.databinding.ActivityMainBinding
 import com.example.moviesapp.ui.actors.ui.ActorsFragment
 import com.example.moviesapp.ui.home.ui.HomeFragment
 import com.example.moviesapp.ui.login.LoginActivity
+
 import com.example.moviesapp.ui.profile.ProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 

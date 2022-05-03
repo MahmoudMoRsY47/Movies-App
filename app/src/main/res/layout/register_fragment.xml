@@ -127,8 +127,8 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="75dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/btn_shape"
             android:text="Sign Up"
@@ -150,12 +150,12 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline12"
-            app:layout_constraintVertical_bias="0.177">
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't have an account?"
+                android:text="have an account?"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
 
@@ -177,4 +177,5 @@
             app:layout_constraintGuide_percent="0.73" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

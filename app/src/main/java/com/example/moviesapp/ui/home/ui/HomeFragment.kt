@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.HomeFragmentBinding
 import com.example.moviesapp.model.Result
@@ -27,10 +29,10 @@ class HomeFragment :Fragment() , MoviesDetailsInter {
         return binding.root
 
     }
-        override fun onStart() {
-            super.onStart()
-            binding.lifecycleOwner = this
-            binding.view = viewModel
+    override fun onStart() {
+        super.onStart()
+        binding.lifecycleOwner = this
+        binding.view = viewModel
 
         val adapter = MovieAdapter(mutableListOf(),this)
         binding.rcv.adapter=adapter

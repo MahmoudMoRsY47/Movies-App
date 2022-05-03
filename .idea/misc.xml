@@ -13,10 +13,10 @@
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/drawable/password_icon.xml" value="0.175" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/drawable/profile.xml" value="0.175" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_details_movie.xml" value="0.18802083333333333" />
-        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_details_of_movie.xml" value="0.33" />
+        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_details_of_movie.xml" value="0.22" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_login.xml" value="0.259375" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_login_fragment.xml" value="0.25625" />
-        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/activity_movie_details.xml" value="0.18802083333333333" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/actors_fragment.xml" value="0.18802083333333333" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/fragment_movies_details.xml" value="0.33" />
@@ -27,7 +27,7 @@
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/one_movie.xml" value="0.282472613458529" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/one_person_image.xml" value="0.5" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/profile_fragment.xml" value="1.48125" />
-        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/register_fragment.xml" value="0.22" />
+        <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/register_fragment.xml" value="0.25" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/layout/splash.xml" value="0.18802083333333333" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/menu/log_out.xml" value="0.25625" />
         <entry key="..\:/android cours/project/MoviesApp/app/src/main/res/menu/main_nav.xml" value="0.246875" />

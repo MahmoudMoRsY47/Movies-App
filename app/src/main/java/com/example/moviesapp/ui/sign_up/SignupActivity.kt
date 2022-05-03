@@ -1,7 +1,6 @@
 package com.example.moviesapp.ui.sign_up
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -17,6 +16,7 @@ class SignupActivity : AppCompatActivity() {
     lateinit var binding: RegisterFragmentBinding
     var mAuth: FirebaseAuth? = null
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.register_fragment)
         mAuth = FirebaseAuth.getInstance()
@@ -25,7 +25,7 @@ class SignupActivity : AppCompatActivity() {
             signUp()
         }
         binding.Signin.setOnClickListener {
-            val intent=Intent(this,LoginActivity::class.java)
+            val intent=Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
     }

@@ -4,9 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
-import com.example.moviesapp.R
 import com.example.moviesapp.MainActivity
+import com.example.moviesapp.R
 import com.example.moviesapp.ui.login.LoginActivity
+
 
 
 class Splash : AppCompatActivity() {
