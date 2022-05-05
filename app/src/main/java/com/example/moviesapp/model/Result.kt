@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 import java.io.Serializable
-
+@Parcelize
 data class Result(
     @SerializedName("adult")
     val adult: Boolean?,
@@ -57,4 +57,4 @@ data class Result(
      val originCountry: String? = null
 
 
-): Serializable
+):Parcelable

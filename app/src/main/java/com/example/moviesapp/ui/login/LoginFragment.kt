@@ -3,34 +3,45 @@ package com.example.moviesapp.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import com.example.moviesapp.MainActivity
-import com.example.moviesapp.R
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.moviesapp.ui.MainActivity
 import com.example.moviesapp.databinding.ActivityLoginFragmentBinding
-import com.example.moviesapp.ui.sign_up.SignupActivity
 import com.google.firebase.auth.FirebaseAuth
 
 
-class LoginActivity : AppCompatActivity() {
+class LoginFragment : Fragment() {
 
     lateinit var binding: ActivityLoginFragmentBinding
     var mAuth: FirebaseAuth? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login_fragment)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = ActivityLoginFragmentBinding.inflate(layoutInflater)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mAuth = FirebaseAuth.getInstance()
         binding.signup.setOnClickListener {
-            val intent= Intent(this, SignupActivity::class.java)
-            startActivity(intent)
+            val action=LoginFragmentDirections.actionLoginFragmentToSignupFragment()
+           findNavController().navigate(action)
         }
         binding.signButton.setOnClickListener {
             logIn()
         }
-
     }
+
+
+
     private fun logIn(){
         val Email = binding.emailLogin.text.toString()
         val Pass = binding.password.text.toString()
@@ -42,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
                         verifyEmail()
                     } else {
                         Toast.makeText(
-                            applicationContext,
+                            activity,
                             it.exception.toString(),
                             Toast.LENGTH_LONG
                         ).show()
@@ -50,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
 
                 }
         }else {
-            Toast.makeText(applicationContext,"Please Complete Your information",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.getApplication() ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
         }
 
     }
@@ -58,11 +69,11 @@ class LoginActivity : AppCompatActivity() {
     private fun verifyEmail() {
         val user= mAuth?.currentUser
         if (user!!.isEmailVerified ){
-            val intent=Intent(this,MainActivity::class.java)
+            val intent=Intent(activity?.getApplication() ?:context, MainActivity::class.java)
             startActivity(intent)
         }
         else{
-            Toast.makeText(this,"Please Verify Your Email",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.getApplication() ?:context,"Please Verify Your Email",Toast.LENGTH_LONG).show()
         }
     }
 

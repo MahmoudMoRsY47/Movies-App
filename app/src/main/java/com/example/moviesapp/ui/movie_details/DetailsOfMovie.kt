@@ -12,22 +12,33 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivityDetailsOfMovieBinding
+import com.example.moviesapp.databinding.ActivityLoginFragmentBinding
 import com.example.moviesapp.model.Result
 import com.example.moviesapp.ui.home.ui.HomeViewModel
 
-class DetailsOfMovie : AppCompatActivity() {
-    lateinit var binding : ActivityDetailsOfMovieBinding
-    private val viewModel : HomeViewModel by viewModels()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
-        binding = DataBindingUtil.setContentView(this , R.layout.activity_details_of_movie)
-        binding.lifecycleOwner=this
+class DetailsOfMovie : Fragment() {
+    lateinit var binding: ActivityDetailsOfMovieBinding
+    private val args by navArgs<DetailsOfMovieArgs>()
 
-        val moviesDe : Result?=intent.getSerializableExtra("id")as Result?
-        moviesDe?.let{bindmovie(it)}
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.activity_details_of_movie, container, false)
+        return binding.root
 
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.name.text=args.movieD.originalTitle
+
+    }
+
+
 
     fun bindmovie(it: Result) {
         binding.apply {

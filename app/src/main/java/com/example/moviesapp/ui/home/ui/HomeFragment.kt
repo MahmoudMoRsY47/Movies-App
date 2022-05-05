@@ -47,8 +47,7 @@ class HomeFragment :Fragment() , MoviesDetailsInter {
     }
 
     override fun onClickItem(moviesDatail: Result) {
-        val Myintent = Intent(activity?.getApplication() ?:context, DetailsOfMovie::class.java)
-        Myintent.putExtra("id",moviesDatail)
-        startActivity(Myintent)
+       val action=HomeFragmentDirections.actionHomeFragmentToDetailsOfMovie(moviesDatail)
+        findNavController().navigate(action)
     }
 }
