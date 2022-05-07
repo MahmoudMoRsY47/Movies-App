@@ -1,6 +1,5 @@
 package com.example.moviesapp.ui.home.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +12,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.HomeFragmentBinding
 import com.example.moviesapp.model.Result
+
 import com.example.moviesapp.ui.home.adapter.MovieAdapter
 import com.example.moviesapp.ui.home.adapter.MoviesDetailsInter
-import com.example.moviesapp.ui.movie_details.DetailsOfMovie
+
 
 class HomeFragment :Fragment() , MoviesDetailsInter {
     private val viewModel : HomeViewModel by viewModels()

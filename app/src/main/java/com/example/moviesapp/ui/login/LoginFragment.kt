@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginFragment : Fragment() {
 
     lateinit var binding: ActivityLoginFragmentBinding
-    var mAuth: FirebaseAuth? = null
+    private var mAuth: FirebaseAuth? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
 
                 }
         }else {
-            Toast.makeText(activity?.getApplication() ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.application ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
         }
 
     }
@@ -69,11 +69,12 @@ class LoginFragment : Fragment() {
     private fun verifyEmail() {
         val user= mAuth?.currentUser
         if (user!!.isEmailVerified ){
-            val intent=Intent(activity?.getApplication() ?:context, MainActivity::class.java)
+            val intent=Intent(activity?.application ?:context, MainActivity::class.java)
             startActivity(intent)
+            activity?.finish()
         }
         else{
-            Toast.makeText(activity?.getApplication() ?:context,"Please Verify Your Email",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.application ?:context,"Please Verify Your Email",Toast.LENGTH_LONG).show()
         }
     }
 

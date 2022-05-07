@@ -2,7 +2,6 @@ package com.example.moviesapp.networking
 
 import com.example.moviesapp.model.Movies
 import com.example.moviesapp.model.VideoResponse
-import com.hamdy.showtime.ui.model.MoviesDetailsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,8 +13,8 @@ interface MovieService {
     @GET("movie/{id}}/videos?")
     suspend fun getTrailer(@Path("id") id:Int,@Query("api_key") key:String): Response<VideoResponse>
 
-    @GET("movie/{id}?")
-    suspend fun getMoviesDetails(@Path("id") page:Int,@Query("api_key") key:String): Response<MoviesDetailsResponse>
+//    @GET("movie/{id}?")
+//    suspend fun getMoviesDetails(@Path("id") page:Int,@Query("api_key") key:String): Response<MoviesDetailsResponse>
 
     @GET("movie/popular?")
     suspend fun getPopularMovies(@Query ("api_key") apiKey :String): Response<Movies>
@@ -26,6 +25,4 @@ interface MovieService {
     @GET("movie/upcoming?")
     suspend fun getUpComing(@Query("api_key") apiKey :String): Response<Movies>
 
-    @GET("trending/movie/day")
-    suspend fun getTrending(@Query("api_key") apiKey :String): Response<Movies>
 }

@@ -1,9 +1,8 @@
 package com.example.moviesapp.ui.home.ui
 
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.example.moviesapp.model.VideoResponse
 import com.example.moviesapp.ui.home.repository.MoviesRepository
 
 class HomeViewModel : ViewModel() {

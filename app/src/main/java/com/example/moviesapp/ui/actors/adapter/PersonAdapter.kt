@@ -31,7 +31,7 @@ class PersonAdapter(private var itemse:List<ResultX>) : RecyclerView.Adapter<Per
             val poster = Constant.POSTER_BASE_URL + currentItem.profilePath
             Glide.with(personImage)
                 .load(poster)
-                .into(personImage);
+                .into(personImage)
 
         }
 
@@ -43,7 +43,7 @@ class PersonAdapter(private var itemse:List<ResultX>) : RecyclerView.Adapter<Per
 
     override fun getItemCount()= itemse.size
 
-    fun setAnimation(viewToAnimate: View, position: Int) {
+    private fun setAnimation(viewToAnimate: View, position: Int) {
         // If the bound view wasn't previously displayed on screen, it's animated
         if (position > lastPosition) {
             val anim = ScaleAnimation(

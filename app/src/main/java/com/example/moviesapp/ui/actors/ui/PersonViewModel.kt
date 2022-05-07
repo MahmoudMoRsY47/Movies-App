@@ -3,7 +3,6 @@ package com.example.moviesapp.ui.actors.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.moviesapp.ui.actors.repository.PersonRepository
-import com.example.moviesapp.ui.home.repository.MoviesRepository
 
 class PersonViewModel : ViewModel() {
     private val repository = PersonRepository()

@@ -1,20 +1,17 @@
 package com.example.moviesapp.ui.movie_details
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.databinding.ActivityDetailsOfMovieBinding
-import com.example.moviesapp.databinding.ActivityLoginFragmentBinding
 import com.example.moviesapp.model.Result
-import com.example.moviesapp.ui.home.ui.HomeViewModel
+
 
 class DetailsOfMovie : Fragment() {
     lateinit var binding: ActivityDetailsOfMovieBinding
@@ -36,11 +33,12 @@ class DetailsOfMovie : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindmovie(args.movieD)
 
+
     }
 
 
 
-    fun bindmovie(it: Result) {
+    private fun bindmovie(it: Result) {
         binding.apply {
             name.text=it.originalTitle
             overView.text=it.overview
@@ -52,7 +50,7 @@ class DetailsOfMovie : Fragment() {
             val moviePosterURL = POSTER_BASE_URL + it.posterPath
             Glide.with(imagee)
                 .load(moviePosterURL)
-                .into(imagee);
+                .into(imagee)
         }
 
     }

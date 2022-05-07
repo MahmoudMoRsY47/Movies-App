@@ -33,7 +33,7 @@ class MovieAdapter(private var items:List<Result>,val listener: MoviesDetailsInt
             val moviePosterURL = Constant.POSTER_BASE_URL + currentItem.posterPath
             Glide.with(image)
                 .load(moviePosterURL)
-                .into(image);
+                .into(image)
             root.setOnClickListener { listener.onClickItem(currentItem) }
 
         }
@@ -46,7 +46,7 @@ class MovieAdapter(private var items:List<Result>,val listener: MoviesDetailsInt
 
     override fun getItemCount()= items.size
 
-    fun setAnimation(viewToAnimate: View, position: Int) {
+    private fun setAnimation(viewToAnimate: View, position: Int) {
         // If the bound view wasn't previously displayed on screen, it's animated
         if (position > lastPosition) {
             val anim = ScaleAnimation(

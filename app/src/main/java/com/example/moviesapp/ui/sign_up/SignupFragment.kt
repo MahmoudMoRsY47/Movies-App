@@ -53,11 +53,11 @@ class SignupFragment : Fragment() {
                     if (it.isSuccessful) {
                         sendEmailVerification()
                         binding.progressBar.visibility=ProgressBar.GONE
-                        val intent=Intent(activity?.getApplication() ?:context,LoginFragment::class.java)
+                        val intent=Intent(activity?.application ?:context,LoginFragment::class.java)
                         startActivity(intent)
                     } else {
                         Toast.makeText(
-                            activity?.getApplication() ?:context,
+                            activity?.application ?:context,
                             it.exception.toString(),
                             Toast.LENGTH_LONG
                         ).show()
@@ -65,7 +65,7 @@ class SignupFragment : Fragment() {
                     }
                 }
         } else {
-            Toast.makeText(activity?.getApplication() ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
+            Toast.makeText(activity?.application ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
         }
     }
 
@@ -73,11 +73,11 @@ class SignupFragment : Fragment() {
         val user= mAuth?.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if (it.isSuccessful){
-                Toast.makeText(activity?.getApplication() ?:context, "Email Success Go To Verify Your Email", Toast.LENGTH_LONG)
+                Toast.makeText(activity?.application ?:context, "Email Success Go To Verify Your Email", Toast.LENGTH_LONG)
                     .show()
             }
             else{
-                Toast.makeText(activity?.getApplication() ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
+                Toast.makeText(activity?.application ?:context,"Please Complete Your information",Toast.LENGTH_LONG).show()
             }
         }
     }

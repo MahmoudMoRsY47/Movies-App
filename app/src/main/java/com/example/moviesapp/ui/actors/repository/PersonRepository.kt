@@ -17,7 +17,7 @@ class PersonRepository {
 
 
 
-    fun <T> wrapWithFlow(function : suspend () -> Response<T>): Flow<State<T?>>{
+    private fun <T> wrapWithFlow(function : suspend () -> Response<T>): Flow<State<T?>>{
         return flow {
             emit(State.Loading)
             try {
