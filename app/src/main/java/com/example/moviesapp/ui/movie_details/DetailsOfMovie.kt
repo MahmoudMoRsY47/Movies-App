@@ -34,7 +34,7 @@ class DetailsOfMovie : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.name.text=args.movieD.originalTitle
+        bindmovie(args.movieD)
 
     }
 
